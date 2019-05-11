@@ -17,4 +17,17 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 '''
+class URLType(models.Model):
+	#contact= models.ForeignKey(URLType,on_delete = models.CASCADE)
+	name = models.CharField(max_length=20)
+	def __str__(self):
+		return self.name
+
+class URL(models.Model):
+	name = models.CharField(max_length=20)
+	URL = models.TextField()
+	urltype= models.ForeignKey(URLType,on_delete = models.CASCADE)
+	description = models.TextField()
+	def __str__(self):
+		return self.name
 # Create your models here.

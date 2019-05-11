@@ -6,5 +6,12 @@
         <div>
             <h1><a href="">Django FCU information main page</a></h1>
         </div>
+		 {% for u in url %}
+		<div>
+			<h2><a href = "{{u.URL}}"> {{u.name}} </a></h2>
+			<p>類型 : {{u.urltype}}</p>
+			<p>說明 : {{u.description}}</p>
+		</div>
+		{% endfor %}
     </body>
 </html>

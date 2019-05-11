@@ -1,16 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from .models import URL,URLType
 
 # Create your views here.
 
 def mainpage(request):
-    return render(request, 'information/mainpage.html', {})
-def enroll(request):
-    return render(request, 'information/mainpage.html', {})
-def academic(request):
-    return render(request, 'information/mainpage.html', {})
-def research(request):
-    return render(request, 'information/mainpage.html', {})
-def life(request):
-    return render(request, 'information/mainpage.html', {})
-def about(request):
-    return render(request, 'information/mainpage.html', {})
+	url = URL.objects.all()
+	urlType = URLType.objects.all()
+	return render(request, 'information/mainpage.html', {'url': url,'urlType':urlType})
