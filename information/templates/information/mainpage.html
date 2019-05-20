@@ -1,17 +1,38 @@
+{% load staticfiles %}
 <html>
     <head>
         <title>Django FCU information</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/information.css' %}">
     </head>
     <body>
-        <div>
+        <div class="page-header">
             <h1><a href="">Django FCU information main page</a></h1>
         </div>
-		 {% for u in url %}
-		<div>
-			<h2><a href = "{{u.URL}}"> {{u.name}} </a></h2>
-			<p>類型 : {{u.urltype}}</p>
-			<p>說明 : {{u.description}}</p>
+		<div class="content container">
+			<div class="row">
+				<div class="col-md-3">
+					{% for u in urlType %}
+						<h3><a href="#{{u.name}}">{{u.name}}</a></h3>
+					{% endfor %}
+				</div>
+				<div class="col-md-8">
+					{% for u in url %}
+						<div class="information"> <a name="{{u.urltype}}"></a>
+							<h2><a href = "{{u.URL}}"> {{u.name}} </a></h2>
+							<p>類型 : {{u.urltype}}</p>
+							<p>說明 : {{u.description}}</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
-		{% endfor %}
+		<div class="container-fluid">
+			<div class="row">
+				<div class = "col-sm-12"><h3>聯絡資訊</h3></div>
+				<div class = "col-sm-12"><p>D0512825@mail.fcu.edu.tw</p></div>
+			</div>
+		</div>
     </body>
 </html>
