@@ -28,10 +28,6 @@ a{
     margin-left: 40px;
 }
 
-.date {
-    color: #828282;
-}
-
 .information-form textarea, .information-form input {
     width: 100%;
 }
@@ -45,8 +41,4 @@ a{
 
 .information {
     margin-bottom: 70px;
-}
-
-.information h1 a, .information h1 a:visited {
-    color: #000000;
 }

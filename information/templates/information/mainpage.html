@@ -19,11 +19,12 @@
 				</div>
 				<div class="col-md-8">
 					{% for u in url %}
-						<div class="information"> <a name="{{u.urltype}}"></a>
-							<h2><a href = "{{u.URL}}"> {{u.name}} </a></h2>
-							<p>類型 : {{u.urltype}}</p>
-							<p>說明 : {{u.description}}</p>
+						<div class="information">
+							<h2><a name="{{u.urltype}}" href = "{{u.URL}}"> {{u.name}} </a></h2>
+							<h4 class="content">類型 : {{u.urltype}}</h4>
+							<h4 class="content">說明 : {{u.description}}</h4>
 						</div>
+						<hr>
 					{% endfor %}
 				</div>
 			</div>
